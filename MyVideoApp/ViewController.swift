@@ -13,7 +13,6 @@ import CoreData
 import CoreMedia
 import AVKit
 
-@available(iOS 10.0, *)
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var moviePlayer:AVPlayerViewController = AVPlayerViewController()
@@ -42,7 +41,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         }else{
             let entityDescriptin = NSEntityDescription.entity(forEntityName: "Video", in: managedObjectContext)
             
-            let photod = videodb(entity: entityDescriptin!, insertInto: managedObjectContext)
+            let photod = Video(entity: entityDescriptin!, insertInto: managedObjectContext)
             
             photod.name = txtName.text!
             photod.datestamp = txtDate.text!
